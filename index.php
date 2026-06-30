@@ -15,8 +15,14 @@ $config = file_exists($configPath)
     ? require $configPath
     : require __DIR__ . '/config.example.php';
 
+$requestInput = jsonInput();
+$requestApiKey = trim((string)($_POST['mistral_api_key'] ?? $requestInput['mistral_api_key'] ?? ''));
+if ($requestApiKey !== '') {
+    $config['mistral_api_key'] = $requestApiKey;
+}
+
 try {
-    $action = (string)($_POST['action'] ?? jsonInput()['action'] ?? '');
+    $action = (string)($_POST['action'] ?? $requestInput['action'] ?? '');
     if ($action === '') {
         respond(['success' => false, 'error' => 'Action manquante']);
     }
