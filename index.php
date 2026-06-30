@@ -30,6 +30,9 @@ try {
     $db = db($config);
 
     switch ($action) {
+        case 'ping':
+            respond(['success' => true, 'php' => true, 'time' => time()]);
+
         case 'init_db':
             initDb($db);
             seedAgents($db, (string)$config['mistral_model']);
