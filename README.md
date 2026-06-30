@@ -1,13 +1,12 @@
-# clone-trading
-
 # CoinGecko AI Mistral Quantique - Kit operationnel
 
-Ce dossier contient les fichiers backend a copier dans votre projet pour rendre
-l'interface crypto operationnelle avec CoinGecko, Mistral AI, SQLite et le mode
-bulk.
+Ce dossier contient l'interface frontend et le backend a copier dans votre
+projet pour rendre l'application crypto operationnelle avec CoinGecko, Mistral
+AI, SQLite et le mode bulk.
 
 ## Fichiers
 
+- `index.html` : interface web a ouvrir dans le navigateur.
 - `index.php` : routeur API PHP appele par le frontend via `const API = 'index.php'`.
 - `config.example.php` : modele de configuration.
 - `data/` : dossier de la base SQLite.
@@ -15,8 +14,7 @@ bulk.
 
 ## Installation
 
-1. Copiez le contenu de ce dossier a la racine de votre site, au meme niveau que
-   votre fichier HTML.
+1. Copiez le contenu de ce dossier a la racine de votre site.
 2. Copiez `config.example.php` en `config.php`.
 3. Ajoutez votre cle Mistral dans `config.php` :
 
@@ -42,7 +40,7 @@ php -S localhost:8000
 Puis ouvrez :
 
 ```txt
-http://localhost:8000
+http://localhost:8000/index.html
 ```
 
 ## Endpoints implementes
